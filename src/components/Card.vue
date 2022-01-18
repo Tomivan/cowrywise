@@ -1,7 +1,9 @@
 <template>
-    <div class="card" v-for="(item, index) in photoUrls" :key="{index}">
+    <section class="image-card">
+      <div class="card" v-for="(item, index) in photoUrls" :key="{index}">
         <img :src="item.small" alt="" class="photo">
-    </div>
+      </div>
+    </section>
 </template>
 
 <script>
@@ -42,6 +44,11 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.image-card{
+  display: flex;
+  flex-wrap: wrap;
+  margin: -2% 0 0 30%;
+}
 .card{
   margin: 0 2% 2% 0;
 }
