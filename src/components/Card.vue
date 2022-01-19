@@ -1,20 +1,18 @@
 <template>
     <section class="image-card">
       <div class="card" v-for="(item, index) in photoUrls" :key="{index}">
-        <vue-content-loading :width="180" :height="430">
           <img :src="item.small" alt="" class="photo">
-        </vue-content-loading>
       </div>
     </section>
 </template>
 
 <script>
-  import VueContentLoading from 'vue-content-loading';
+  // import VueContentLoading from 'vue-content-loading';
   export default {
   name: 'Card',
-  components: {
-    VueContentLoading,
-  },
+  // components: {
+  //   VueContentLoading,
+  // },
    data() {
     return {
       photoUrls: [],

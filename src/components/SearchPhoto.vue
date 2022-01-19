@@ -12,13 +12,13 @@ export default {
   name: 'SearchPhoto',
    created() {
       this.searchPhotos()
-  },
-  methods: {
-    searchPhotos() {
-     const headers = { "Authorization": "Client-ID jF5H3GQKQhaKdSecL9UestPChaSxMAaUaUps5oXopbc"};
-     fetch("https://api.unsplash.com/search/photos",  { headers })
-    .then(response => response.json())
-  }
+  // },
+  // methods: {
+  //   searchPhotos() {
+  //    const headers = { "Authorization": "Client-ID jF5H3GQKQhaKdSecL9UestPChaSxMAaUaUps5oXopbc"};
+  //    fetch("https://api.unsplash.com/search/photos",  { headers })
+  //   .then(response => response.json())
+  // }
   },
 }
 </script>
