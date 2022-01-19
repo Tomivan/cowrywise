@@ -1,14 +1,20 @@
 <template>
     <section class="image-card">
       <div class="card" v-for="(item, index) in photoUrls" :key="{index}">
-        <img :src="item.small" alt="" class="photo">
+        <vue-content-loading :width="180" :height="430">
+          <img :src="item.small" alt="" class="photo">
+        </vue-content-loading>
       </div>
     </section>
 </template>
 
 <script>
-export default {
+  import VueContentLoading from 'vue-content-loading';
+  export default {
   name: 'Card',
+  components: {
+    VueContentLoading,
+  },
    data() {
     return {
       photoUrls: [],
@@ -17,7 +23,6 @@ export default {
     },
     created() {
       this.getUnsplashPhotos()
-      this.searchPhotos()
   },
    methods: {
     getUnsplashPhotos() {
@@ -33,11 +38,6 @@ export default {
     })
     .catch(error => console.log('error: ', error))
   }
-  },
-  searchPhotos() {
-     const headers = { "Authorization": "Client-ID jF5H3GQKQhaKdSecL9UestPChaSxMAaUaUps5oXopbc"};
-     fetch("https://api.unsplash.com/search/photos",  { headers })
-    .then(response => response.json())
   }
 }
 </script>
@@ -47,7 +47,8 @@ export default {
 .image-card{
   display: flex;
   flex-wrap: wrap;
-  margin: -2% 0 0 30%;
+  margin: -1% 0 0 28%;
+  width: 60%;
 }
 .card{
   margin: 0 2% 2% 0;
