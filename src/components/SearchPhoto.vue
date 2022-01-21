@@ -2,7 +2,7 @@
   <div class="search">
      <div class="input">
         <i class="fa fa-search search-icon" aria-hidden="true"></i>
-        <input type="text" placeholder="Search for photo" v-model="search">
+        <input type="text" placeholder="Search for photo" v-model="search" @keyup="searchPhotos">
       </div>
   </div>
 </template>
@@ -10,15 +10,21 @@
 <script>
 export default {
   name: 'SearchPhoto',
+  data() {
+    return {
+      photos: [],
+      search: ""
+    }
+  },
    created() {
       this.searchPhotos()
-  // },
-  // methods: {
-  //   searchPhotos() {
-  //    const headers = { "Authorization": "Client-ID jF5H3GQKQhaKdSecL9UestPChaSxMAaUaUps5oXopbc"};
-  //    fetch("https://api.unsplash.com/search/photos",  { headers })
-  //   .then(response => response.json())
-  // }
+  },
+  methods: {
+    searchPhotos() {
+     const headers = { "Authorization": "Client-ID J05MCgl8YDTlnEQRvSyg4mKnaEEU6iC6GSgc6etlexU"};
+     fetch("https://api.unsplash.com/search/photos?query=${search}",  { headers })
+    .then(response => response.json())
+  }
   },
 }
 </script>
