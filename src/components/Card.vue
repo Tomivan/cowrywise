@@ -64,4 +64,13 @@
   height: 30vh;
   border-radius: 5px;
 }
+
+@media screen and (max-width: 768px){
+  .photo{
+    width: 60vw;
+  }
+  .image-card{
+    margin-left: 20%;
+  }
+}
 </style>

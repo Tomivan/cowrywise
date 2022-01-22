@@ -24,6 +24,7 @@ export default {
      const headers = { "Authorization": "Client-ID J05MCgl8YDTlnEQRvSyg4mKnaEEU6iC6GSgc6etlexU"};
      fetch("https://api.unsplash.com/search/photos?query=${search}",  { headers })
     .then(response => response.json())
+    console.log()
   }
   },
 }
